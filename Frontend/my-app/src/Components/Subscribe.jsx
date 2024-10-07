@@ -1,4 +1,5 @@
 import React from 'react'
+import "../Styles/Subscribe.css"
 
 function Subscribe() {
     const data=JSON.parse(localStorage.getItem("Stock"))
@@ -17,7 +18,7 @@ function Subscribe() {
           <p><strong>Last Refreshed:</strong> {data["3. Last Refreshed"]}</p>
           </div>
           <div>
-          <p><strong>Time Zone:</strong> {data["5. Time Zone"]}</p>
+          <p><strong>Time Zone:</strong> {data["4. Time Zone"]}</p>
           </div>
           </div>))
        
