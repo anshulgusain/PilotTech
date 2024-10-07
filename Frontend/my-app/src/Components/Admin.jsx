@@ -8,7 +8,7 @@ function Admin() {
         const search = async () => {
           try {
          
-            const response = await axios.get("http://localhost:8080/user")
+            const response = await axios.get("https://pilottech.onrender.com/user")
             
             setData(response.data)
            console.log(data)

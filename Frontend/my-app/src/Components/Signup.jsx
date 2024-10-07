@@ -24,7 +24,7 @@ const fetchData=async()=>{
   };
 
   try{
- const response= await axios.post("http://localhost:8080/signup",userData)
+ const response= await axios.post("https://pilottech.onrender.com/signup",userData)
  
  console.log("Signup Successful:",response.data)
  alert("Signed-Up Successfully")

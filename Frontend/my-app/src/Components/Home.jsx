@@ -16,16 +16,6 @@ function Home() {
   const navigate=useNavigate()
 
 
-  // const handleEdit=()=>{
-
-  // }
-
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-      "authorization": `Bearer ${localStorage.getItem("token")}`
-    }
-  }
 
 const handleSubmit=async(e)=>{
   e.preventDefault();
@@ -66,10 +56,17 @@ const handleSubmit=async(e)=>{
       {
           data.map((ele)=>(
               <div className="stocktitle">
-               
+               <div>
                <h2>Stock Information for {ele["Meta Data"]["2. Symbol"]}</h2>
-          <p><strong>Last Refreshed:</strong> {ele["Meta Data"]["3. Last Refreshed"]}</p>
-          <p><strong>Time Zone:</strong> {ele["Meta Data"]["5. Time Zone"]}</p>
+               </div>
+               <div>
+               <p><strong>Last Refreshed:</strong> {ele["Meta Data"]["3. Last Refreshed"]}</p>
+               </div>
+               <div>
+               <p><strong>Time Zone:</strong> {ele["Meta Data"]["5. Time Zone"]}</p>
+               </div>
+          
+         
                   <div>
                       <button className="subscribe" onClick={(()=>{
                           localStorage.setItem("Stock",JSON.stringify(ele))
