@@ -1,18 +1,33 @@
 import React from 'react'
 
 function Subscribe() {
-    const stocks=JSON.parse(localStorage.getItem("stock"))
+    const data=JSON.parse(localStorage.getItem("Stock"))
+    // console.log(data)
+    if(data==null)return <div><h1>No Stocks Subscribed</h1></div>
   return (
     <div>
-      <div className="subscribeContainer">
+     
        {
-        stocks.map((ele)=>{
-            <div className="stockParent">
-            <h1>{ ele.symbol}</h1>  
-            </div>
-        })
-       }
-      </div>
+       data!=null &&(
+        data.map((data)=>(  <div className="stocktitle">
+          <div>
+          <h2>Stock Information for {data["2. Symbol"]}</h2>
+          </div>
+          <div>
+          <p><strong>Last Refreshed:</strong> {data["3. Last Refreshed"]}</p>
+          </div>
+          <div>
+          <p><strong>Time Zone:</strong> {data["5. Time Zone"]}</p>
+          </div>
+          </div>))
+       
+    
+   
+            
+     
+       
+     
+       )}
     </div>
   )
 }
